@@ -19,7 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
     _controller.addListener(() {
       if (!_controller.value.isPlaying) {
-        Navigator.popAndPushNamed(context, 'welcome');
+        Navigator.of(context).pushNamedAndRemoveUntil('welcome', (Route<dynamic> route) => false);
       }
     });
   }
